@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 
 import { getProducts } from '../../../store/products/products.thunks';
 import { selectProductsData, selectProductsError, selectProductsLoading } from '../../../store/products/products.selectors';
-import Chart from '../../Common/RatingChart/RatingChart';
+import RatingChart from '../../Common/RatingChart/RatingChart';
 import Spinner from '../../Common/Spinner/Spinner';
 
 import style from './_home.module.scss';
@@ -16,7 +16,7 @@ const Home = () => {
     const isLoading = useAppSelector(selectProductsLoading);
     const error = useAppSelector(selectProductsError);
 
-    const selectHandler = (event: React.ChangeEvent<HTMLSelectElement> ) => {
+    const selectHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setFilter(event.target.value); 
     };
 
@@ -29,7 +29,7 @@ const Home = () => {
     }, [filter, products]); 
 
     return (
-        <>
+        <main>
             <select value={filter} onChange={selectHandler}>
                 <option value="smartphones">Smartphones</option>
                 <option value="laptops">Laptops</option> 
@@ -37,12 +37,12 @@ const Home = () => {
             
             {isLoading? 
             <Spinner/>
-            :!error && <Chart data={filteredProducts} filter={filter}/>
+            :!error && <RatingChart data={filteredProducts} filter={filter}/>
             }
 
             {!!error &&  
             <p className={style.error}> {error} </p>}
-        </>
+        </main>
     )
 }
 

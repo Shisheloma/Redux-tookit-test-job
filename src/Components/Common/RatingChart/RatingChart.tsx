@@ -1,6 +1,7 @@
 import { FC, memo, useRef } from 'react';
 import HighchartsReact from 'highcharts-react-official';
 import Highcharts from 'highcharts';
+
 import { productType } from '../../../store/products/products.slice';
 
 type chartProps = {
@@ -33,7 +34,7 @@ const RatingChart: FC<chartProps> = ({ filter, data}) => {
             {
                 name: capitilizedFilter,
                 type: 'column',
-                data: [...rating]
+                data: rating
             }
         ]
     };
@@ -41,9 +42,9 @@ const RatingChart: FC<chartProps> = ({ filter, data}) => {
     return ( 
         <div>
             <HighchartsReact
-                    highcharts={Highcharts}
-                    options={options}
-                    ref={chartComponentRef}/>
+                        highcharts={Highcharts}
+                        options={options}
+                        ref={chartComponentRef}/>
         </div>
     )
 }
