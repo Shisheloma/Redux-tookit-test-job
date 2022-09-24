@@ -1,6 +1,7 @@
 Тестовое задание на Redux-toolkit + TypeScript.
 
 Развернутый проект можно найти здесь: 
+
 https://delicate-cassata-f6bf48.netlify.app/
 
 Условия задания:
