@@ -1,6 +1,9 @@
 Тестовое задание на Redux-toolkit + TypeScript.
 
 Развернутый проект можно найти здесь: 
+https://delicate-cassata-f6bf48.netlify.app/
+
+Условия задания:
 
 Используя React + TypeScript, а также библиотеку highcharts.js (https://github.com/highcharts/highcharts-react)
 Сделать страницу с графиком, отображающим рейтинг смартфонов\планшетов.
